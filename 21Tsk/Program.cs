@@ -20,30 +20,31 @@ namespace _21Tsk
         static int wid;
         static int len;
         static int[,] arGard;
-
+        //Задаем метод 1
         static void garWorker1()
         {
             for (int i = 0; i < wid; i++)
             {
                 for (int j = 0; j < len; j++)
                 {
-                    if (arGard[i,j]==0)
+                    if (arGard[i, j] == 0) 
                     {
-                        arGard[i, j] = 3;
+                        arGard[i, j] = 7;
                     }
                     Thread.Sleep(2);
                 }
             }
         }
+        //Задаем метод 2
         static void garWorker2()
         {
             for (int i =  wid - 1; i > 0; i--)
             {
                 for (int j = len - 1; j > 0; j--)
                 {
-                    if (arGard[i,j]==0)
+                    if (arGard[j, i] == 0) 
                     {
-                        arGard[i, j] = 2;
+                        arGard[j, i] = 1;
                     }
                     Thread.Sleep(2);
                 }
@@ -77,7 +78,6 @@ namespace _21Tsk
                 Console.WriteLine();
             }
             Console.ReadKey();
-
         }
     }
 }
