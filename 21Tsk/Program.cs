@@ -19,7 +19,7 @@ namespace _21Tsk
         //Задаем аргументы
         static int wid;
         static int len;
-        static int[,] arGard;
+        static char[,] arGard;
         //Задаем метод 1
         static void garWorker1()
         {
@@ -29,7 +29,7 @@ namespace _21Tsk
                 {
                     if (arGard[i, j] == 0) 
                     {
-                        arGard[i, j] = 7;
+                        arGard[i, j] = '+';
                     }
                     Thread.Sleep(2);
                 }
@@ -44,7 +44,7 @@ namespace _21Tsk
                 {
                     if (arGard[j, i] == 0) 
                     {
-                        arGard[j, i] = 1;
+                        arGard[j, i] = '-';
                     }
                     Thread.Sleep(2);
                 }
@@ -58,7 +58,7 @@ namespace _21Tsk
             wid = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите ширину учстка");
             len = Convert.ToInt32(Console.ReadLine());
-            arGard = new int[wid, len];
+            arGard = new char[wid, len];
             //Создание потоков
             Thread Gar1 = new Thread(garWorker1);
             Thread Gar2 = new Thread(garWorker2);
